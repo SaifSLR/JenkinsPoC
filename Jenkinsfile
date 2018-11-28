@@ -1,11 +1,4 @@
 pipeline {    
-   
-	def remote = [:]
-    remote.name = 'Admin'
-    remote.host = '192.168.12.131'
-    remote.user = 'Admin'
-    remote.password = 'Admin123'
-    remote.allowAnyHosts = true
 
 
     agent any
