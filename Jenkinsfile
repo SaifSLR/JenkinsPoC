@@ -7,17 +7,17 @@ pipeline {
         stage('SSH'){
         	when { branch "release/*" }
         	steps{
-        		echo 'Hello World'
+        		sh echo 'Hello World'
         	}
         }
      }   
 
     post {
         always {
-            echo 'Text Complete'
+            sh echo 'Text Complete'
         }
         failure {
-          echo 'Test Fail'
+          sh echo 'Test Fail'
         }
     }
 }
