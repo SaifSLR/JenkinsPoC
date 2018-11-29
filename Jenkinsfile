@@ -1,29 +1,17 @@
-pipeline {    
-
-
-    agent any
-    stages {
-
-        stage('SSH'){
-        	when { branch "release/*" }
-        	steps{
-                step{
-        		echo 'Hello World'
-        	}
-        }
-     }   
-
-    post {
-        always {
-            echo 'Text Complete'
-        }
-        failure {
-          echo 'Test Fail'
-        }
+pipeline {
+  agent any
+  stages {
+    stage('myStage'){
+      steps {
+        sh 'ls -la' 
+      }
     }
+    stage('Build') {
+      steps { 
+        sh 'ls' 
+      }
     }
+  }
 }
- 
- 
  
  
