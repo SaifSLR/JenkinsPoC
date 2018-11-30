@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('ssh') {
       steps { 
-        cd /home/safej/Desktop/Work
-        sh ./ssh.txt
+        sh '/home/safej/Desktop/Work/ssh.txt'
       }
     }
   }
