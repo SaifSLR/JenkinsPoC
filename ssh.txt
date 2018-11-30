@@ -1,0 +1,6 @@
+#!/usr/bin/expect
+
+spawn ssh Admin@192.168.12.137
+expect "password"
+send "Admin123\r"
+interact
