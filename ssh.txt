@@ -1,10 +1,8 @@
+
 #!/usr/bin/expect
 
 spawn ssh -o "StrictHostKeyChecking no" Admin@192.168.12.16
 
-expect {
-        "(yes/no)" { send "yes\r";exp_continue}
-        #If 'password' seen first, then proceed as such.
-        "password" {send "Admin123\r"}
-}
-
+expect "password"
+send "Admin123\r"
+interact
