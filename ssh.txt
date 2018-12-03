@@ -5,6 +5,8 @@ expect "fingerprint"
 send "yes\r"
 expect "yes/no"
 send "yes\r"
+expect "Please type"
+send "yes\r"
 expect "password"
 send "Admin123\r"
 interact
