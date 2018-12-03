@@ -4,9 +4,11 @@ set timeout 60
 
 spawn ssh Admin@192.168.12.16
 
-expect "authenticity of host" { send "yes\r";exp_continue}
-
-expect { "yes/no" { send "yes\r";exp_continue}
-	expect "Password" { send "Admin123\r" } 
-	}
-interact
+expect {
+        #If 'expect' sees '(yes/no )', then it will send 'yes'
+        #and continue the 'expect' loop
+        "(yes/no)" { send "yes\r";exp_continue}
+        #If 'password' seen first, then proceed as such.
+        "password"
+}
+send "Admin123\r"
