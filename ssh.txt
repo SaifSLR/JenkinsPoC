@@ -1,10 +1,20 @@
 
 #!/usr/bin/expect
 
-set timeout 60
-
 spawn ssh -o "StrictHostKeyChecking no" Admin@192.168.12.16
 
-expect "password"
-send "Admin123\r"
-interact
+set timeout 10
+
+set pass "password"
+
+expect {
+
+        "*yes/no*" {
+                send "yes\r";
+                exp_continue
+        }
+        "*password*"
+
+}
+
+send "Admin123\r";
