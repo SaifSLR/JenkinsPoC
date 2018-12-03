@@ -4,5 +4,5 @@ spawn ssh Admin@192.168.12.16
 expect "password"
 send "Admin123\r"
 expect "Are you sure you want to continue connecting"
-send "yes"
+send "yes\r"
 interact
