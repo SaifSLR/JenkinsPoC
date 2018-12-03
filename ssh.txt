@@ -3,8 +3,14 @@
 set timeout 60
 
 spawn ssh Admin@192.168.12.16
-expect "yes/no" { 
-	send "yes\r"
-	expect "*?assword" { send "Admin123\r" }
-	} "*?assword" { send "Admin123\r" }
+
+expect "password"
+send "Admin123\r"
+interact
+
+expect "authenticity of host"
+
+expect { "yes/no" { send "yes\r";exp_continue}
+	expect "Password" { send "Admin123\r" } 
+	}
 interact
