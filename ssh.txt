@@ -1,5 +1,7 @@
 #!/usr/bin/expect
 
+set timeout 60
+
 spawn ssh Admin@192.168.12.16
 expect "yes/no" { 
 	send "yes\r"
