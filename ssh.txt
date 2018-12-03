@@ -1,14 +1,7 @@
 
 #!/usr/bin/expect
 
-set prompt "#|>|\\\$"
-spawn ssh Admin@192.168.12.16
-expect {
-        #If 'expect' sees '(yes/no )', then it will send 'yes'
-        #and continue the 'expect' loop
-        "(yes/no)" { send "yes\r";exp_continue}
-        #If 'password' seen first, then proceed as such.
-        "password"
-}
-send "root\r"
-expect -re $prompt
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no Admin@192.168.12.16
+expect "password"
+send "Admin123\r"
+
