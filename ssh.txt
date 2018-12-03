@@ -7,6 +7,8 @@ spawn ssh Admin@192.168.12.16
 expect {
         #If 'expect' sees '(yes/no )', then it will send 'yes'
         #and continue the 'expect' loop
+        "The authenticity of host" { send "yes\r";exp_continue}
+        "ECDSA key fingerprint" { send "yes\r";exp_continue}
         "(yes/no)" { send "yes\r";exp_continue}
         #If 'password' seen first, then proceed as such.
         "password"
