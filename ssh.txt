@@ -6,3 +6,5 @@ set timeout 30
 spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no Admin@192.168.12.16
 expect "password"
 send "Admin123\r"
+
+yo
