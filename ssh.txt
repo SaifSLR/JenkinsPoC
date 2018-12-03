@@ -1,6 +1,6 @@
 #!/usr/bin/expect
 
-spawn ssh Admin@192.168.12.16
+spawn -o "StrictHostKeyChecking no" ssh Admin@192.168.12.16
 
 expect {
         "(yes/no)" { send "yes\r";exp_continue}
