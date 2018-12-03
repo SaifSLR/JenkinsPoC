@@ -7,4 +7,3 @@ spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no Admin@192.
 expect "password"
 send "Admin123\r"
 
-dasdsa
